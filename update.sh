@@ -2,6 +2,6 @@
 git pull origin master
 docker-compose down
 docker-compose build
-docker-compose up -d -f docker-compose.yml -f docker-compose.prod.yml
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 docker exec -it ww_app composer install -d /app
 docker exec -it ww_app php /app/artisan migrate --force
