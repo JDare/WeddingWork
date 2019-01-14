@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-get install -y zip && \
     apt-get install -y unzip
 
+RUN a2enmod rewrite
 ENV APACHE_DOCUMENT_ROOT /app/public
 
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
