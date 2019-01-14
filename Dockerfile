@@ -37,6 +37,8 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 ## Copy directory to app
 COPY . /app
 
+WORKDIR /app
+
 ## Finally install frontend dependancies and run for production
 RUN npm install --global cross-env
 RUN npm install && npm run production
@@ -47,5 +49,5 @@ RUN chown -R www-data:www-data /app && \
     chmod -R 770 /app/storage
 
 
-WORKDIR /app
+
 
