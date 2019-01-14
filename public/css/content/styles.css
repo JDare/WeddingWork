@@ -1,0 +1,72 @@
+
+/*
+====================================================
+
+* 	[Master Stylesheet]
+	
+	Theme Name :  
+	Version    :  
+	Author     :  
+	Author URI :  
+
+====================================================
+
+	TOC
+	
+	1. PRIMARY STYLES
+	2. COMMONS FOR PAGE DESIGN
+		JQUERY LIGHT BOX
+	3. MENU
+		MIDDLE AREA
+		BOTTOM AREA
+		DROPDOWN MENU STYLING
+		DROPDOWN SUBMENU
+		DROPDOWN HOVER 
+	4. SLIDER
+	5. CONTACT AREA
+	6. FOOTER
+
+====================================================
+
+/* ---------------------------------
+4. SLIDER
+--------------------------------- */
+
+.main-slider{ height: 500px; position: relative; z-index: 1; 
+	background-image: url(../../images/counter-1-1600x600.jpg); background-size: cover; color: #fff; } 
+
+.main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+	z-index: -1; background: rgba(0,0,0,.3); }
+
+.main-slider .slider-content .title{ margin-bottom: 20px; }
+
+.main-slider .slider-content i{ margin-right: 10px; transform: translateY(3px); }
+
+
+
+/* ---------------------------------
+5. CONTENT AREA
+--------------------------------- */
+
+.regular-area{ padding: 0 0 100px 0; margin-top: -50px; position: relative; z-index: 10; }
+
+.regular-area .content{ padding: 40px 70px; box-shadow: 2px 10px 20px rgba(0,0,0,.2); background: #fff; }
+
+.content .margin-top-btm{ margin: 20px 0; }
+
+.content .img-wrapper{ margin: 30px 0; }
+
+.content .quoto-area{ position: relative; padding-left: 50px; }
+
+.content .quoto-area .quoto{ font-size: 2em; }
+
+.content .quoto-area .quoto i{ position: absolute; top: -10px; left: 0; transform: rotate(180deg); color: #E45F74; }
+
+.content .quoto-area .name{ margin-top: 20px; color: #666; }
+
+.content .braidmaids-name li{ display: block; margin: 10px 0; }
+
+.content .braidmaids-name li:first-child:before{ display: none; }
+
+.content .braidmaids-name li:before{ content:""; display: inline-block; height: 10px; width: 10px; 
+	border-radius: 10px; margin-right: 15px; border: 1px solid #888; }

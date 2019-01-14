@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
-
+@section('css')
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet">
 
@@ -16,17 +16,16 @@
     <link href="/css/fluidbox.min.css" rel="stylesheet">
 
     <link href="/css/font-icon.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+@show
 
-    <link href="/css/styles.css" rel="stylesheet">
-
-    <link href="/css/responsive.css" rel="stylesheet">
 </head>
 <body>
 <header>
 
     <div class="container">
 
-        <a class="logo" href="#"><img src="images/logo-white.png" alt="Logo"></a>
+        <a class="logo" href="/"><img src="images/logo-white.png" alt="Lilly and Jeremy's Wedding"></a>
 
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="icon icon-bars"></i></div>
 

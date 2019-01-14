@@ -1,5 +1,11 @@
 @extends('layout')
 
+@section('css')
+@parent
+<link href="/css/homepage/styles.css" rel="stylesheet">
+<link href="/css/homepage/responsive.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="main-slider">
     <div class="display-table center-text">

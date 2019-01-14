@@ -7,7 +7,7 @@
 	// JQUERY LIGHT BOX
 	
 	if ( $.isFunction($.fn.fluidbox) ) {
-		$('a').fluidbox();
+		$('a.gallery-link').fluidbox();
 	}
 
 	

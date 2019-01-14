@@ -1,0 +1,135 @@
+
+/*
+====================================================
+
+* 	[Master Stylesheet]
+	
+	Theme Name :  
+	Version    :  
+	Author     :  
+	Author URI :  
+
+====================================================
+
+	TOC
+	
+	1. PRIMARY STYLES
+	2. COMMONS FOR PAGE DESIGN
+		JQUERY LIGHT BOX
+	3. MENU
+		MIDDLE AREA
+		BOTTOM AREA
+		DROPDOWN MENU STYLING
+		DROPDOWN SUBMENU
+		DROPDOWN HOVER 
+	4. SLIDER
+	5. STORY AREA
+	6. REMAINING TIME
+	7. WEDDING DETAILS AREA
+	8. WEDDING CEREMONY
+	9. CONTACT AREA
+	10. VIEW GALLERY
+	11. FOOTER
+
+====================================================
+
+	
+	
+/* ---------------------------------
+4. SLIDER
+--------------------------------- */
+
+.main-slider{ height: 100vh; position: relative; z-index: 1; 
+	background-image: url(/images/portrait-slider2.jpg); background-size: cover; background-position: center center; color: #fff; }
+
+.main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+	z-index: -1; background: rgba(0,0,0,.3); }
+
+.slider-content .date{ margin: 10px 0 0; }
+
+.slider-content i{ line-height: 1; }
+
+.slider-content i.small-icon{ font-size: 2.5em; }
+
+.slider-content .title i{ transform: translateY(10px); font-size: .8em; color: #E45F74; }
+
+
+/* ---------------------------------
+5. STORY AREA
+--------------------------------- */
+
+.story-area{ position: relative; z-index: 1; }
+
+.story-area:after{ content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1;
+	opacity: .8; background: url(/images/Background_Circle.png); }
+
+
+/* ---------------------------------
+6. REMAINING TIME
+--------------------------------- */
+
+.counter-area{ position: relative; z-index: 1; 
+	background-image: url(/images/counter-1-1600x600.jpg); background-size: cover; color: #fff; }
+
+.counter-area:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+	z-index: -1; background: rgba(0,0,0,.3); }
+	
+.remaining-time .time-sec{ position: relative; display: inline-block; margin: 0 20px; margin-bottom: 30px; 
+	height: 140px; width: 140px; padding-top: 37px; border-radius: 100px; border: 1px solid #fff; }
+
+.remaining-time .time-sec .title{ font-size: 3em; line-height: 1; display: block; }
+
+
+
+/* ---------------------------------
+7. WEDDING DETAILS AREA
+--------------------------------- */
+
+.wedding-details{ overflow: hidden; position: relative; }
+
+.wedding-details:after{ content:''; position: absolute; top: 0; bottom: 0; left: 50%; margin-left: -.5px;
+	width: 1px; background: #ccc; }
+
+.w-detail{ width: 50%; padding: 0 50px; margin-bottom: 30px; position: relative; clear: both; margin-top: -40px; }
+
+.w-detail:first-child{ margin-top: 0; }
+
+.w-detail:last-child{ margin-bottom: 0; }
+
+.w-detail:after{ content:''; position: absolute; top: 0; height: 18px; width: 18px; border-radius: 20px;
+	z-index: 1; border: 1px solid #aaa; background: #fff; }
+
+.w-detail.right{ text-align: left;  float: right; }
+
+.w-detail.right:after{ left: 0; margin-left: -9px; }
+	
+.w-detail.left{ text-align: right;  float: left; }
+
+.w-detail.left:after{ right: 0; margin-right: -9px; }
+	
+.w-detail .title{ margin: 10px 0; }
+
+.w-detail .icon{ font-size: 3.5em; line-height: 1; color: #E45F74; }
+
+
+
+/* ---------------------------------
+8. WEDDING CEREMONY
+--------------------------------- */
+
+.ceremony-area{ position: relative; z-index: 1; 
+	background-image: url(../../images/counter-1-1600x600.jpg); background-size: cover; color: #fff; }
+
+.ceremony-area:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+	z-index: -1; background: rgba(0,0,0,.3); }
+	
+.ceremony .desc{ margin-bottom: 15px; color: #fff;  }
+
+/* ---------------------------------
+10. VIEW GALLERY
+--------------------------------- */
+
+.galery-area .gallery-btn{ margin-top: 30px; }
+
+
+
