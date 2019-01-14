@@ -12,3 +12,5 @@
 ## Customizing
 
 All templates are currently under `resources/` directory.
+
+Further tweaks can be made via the config `config/wedding.php` including dates, names etc.
