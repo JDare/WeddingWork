@@ -40,10 +40,19 @@
 --------------------------------- */
 
 .main-slider{ height: 100vh; position: relative; z-index: 1; 
-	background-image: url(/images/portrait-slider2.jpg); background-size: cover; background-position: center center; color: #fff; }
+	background-image: url(/images/portrait-reframe4.jpg); background-size: cover; background-position: center center; color: #fff; }
 
 .main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
 	z-index: -1; background: rgba(0,0,0,.3); }
+
+.slider-content.intro {
+	display: inline-block;
+	width: auto;
+	margin: 0 auto;
+	padding: 40px;
+	background: rgba(0,0,0,0.7);
+	border-radius: 35px;
+}
 
 .slider-content .date{ margin: 10px 0 0; }
 

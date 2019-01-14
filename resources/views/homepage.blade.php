@@ -10,7 +10,7 @@
 <div class="main-slider">
     <div class="display-table center-text">
         <div class="display-table-cell">
-            <div class="slider-content">
+            <div class="slider-content intro">
 
                 <i class="small-icon icon icon-tie"></i>
                 <h5 class="date">{{ Carbon\Carbon::parse(config('wedding.date'))->format('jS F Y') }}</h5>
