@@ -2,8 +2,8 @@
 
 @section('css')
     @parent
-    <link href="/css/rsvp/styles.css" rel="stylesheet">
-    <link href="/css/rsvp/responsive.css" rel="stylesheet">
+    <link href="/css/static/rsvp/styles.css" rel="stylesheet">
+    <link href="/css/static/rsvp/responsive.css" rel="stylesheet">
 @endsection
 
 @section('content')

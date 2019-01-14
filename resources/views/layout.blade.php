@@ -11,12 +11,12 @@
     <link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/static/bootstrap.css" rel="stylesheet">
 
-    <link href="/css/fluidbox.min.css" rel="stylesheet">
+    <link href="/css/static/fluidbox.min.css" rel="stylesheet">
 
-    <link href="/css/font-icon.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/static/font-icon.css" rel="stylesheet">
+    <link href="/css/static/main.css" rel="stylesheet">
 @show
 
 </head>
@@ -25,7 +25,7 @@
 
     <div class="container">
 
-        <a class="logo" href="/"><img src="images/logo-white.png" alt="{{ config('wedding.bride.name') }} and {{ config('wedding.groom.name') }}'s Wedding"></a>
+        <a class="logo" href="/"><img src="../images/logo-white.png" alt="{{ config('wedding.bride.name') }} and {{ config('wedding.groom.name') }}'s Wedding"></a>
 
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="icon icon-bars"></i></div>
 
@@ -56,7 +56,7 @@
     <div class="container center-text">
 
         <div class="logo-wrapper">
-            <a class="logo" href="#"><img src="images/logo-black.png" alt="Logo Image"></a>
+            <a class="logo" href="#"><img src="../images/logo-black.png" alt="Logo Image"></a>
             <i class="icon icon-star"></i>
         </div>
 
@@ -95,17 +95,17 @@
 
 <!-- SCRIPTS -->
 
-<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/static/jquery-3.1.1.min.js"></script>
 
-<script src="/js/tether.min.js"></script>
+<script src="/js/static/tether.min.js"></script>
 
-<script src="/js/bootstrap.js"></script>
+<script src="/js/static/bootstrap.js"></script>
 
-<script src="/js/jquery.countdown.min.js"></script>
+<script src="/js/static/jquery.countdown.min.js"></script>
 
-<script src="/js/jquery.fluidbox.min.js"></script>
+<script src="/js/static/jquery.fluidbox.min.js"></script>
 
-<script src="/js/scripts.js"></script>
+<script src="/js/static/scripts.js"></script>
 
 </body>
 </html>

@@ -18,8 +18,18 @@ If you don't want to create a full CI/CD pipeline for this, you can simple follo
 
 NOTE: this is not ideal and there will be some downtime during deploy, so use at your own risk!
 
-## Customizing
+# Customizing
 
-All templates are currently under `resources/` directory.
+## Frontend
+
+All templates are currently under `resources/views` directory.
+
+For CSS/Styles, Wedding Work uses Laravel Mix.
+
+Install NodeJS/NPM and run `npm run dev`
+
+This should compile all frontend assets.
+Note: `resources/sass/static` and `resources/js/static` are from the original theme which was not in a sass format.
 
 Further tweaks can be made via the config `config/wedding.php` including dates, names etc.
+

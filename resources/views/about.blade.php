@@ -2,8 +2,8 @@
 
 @section('css')
     @parent
-    <link href="/css/content/styles.css" rel="stylesheet">
-    <link href="/css/content/responsive.css" rel="stylesheet">
+    <link href="/css/static/content/styles.css" rel="stylesheet">
+    <link href="/css/static/content/responsive.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
 
                 <div class="content">
 
-                    <div class="img-wrapper"><img src="images/regular-content-1-1000x650.jpg" alt="Content Image"></div>
+                    <div class="img-wrapper"><img src="../images/regular-content-1-1000x650.jpg" alt="Content Image"></div>
 
                     <h2 class="margin-top-btm">Planning Honeymoon Trip</h2>
                     <p class="margin-top-btm">Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -60,10 +60,10 @@
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="img-wrapper"><img src="images/regular-content-2-600x400.jpg" alt="Content Image"></div>
+                            <div class="img-wrapper"><img src="../images/regular-content-2-600x400.jpg" alt="Content Image"></div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
-                            <div class="img-wrapper"><img src="images/regular-content-3-600x400.jpg" alt="Content Image"></div>
+                            <div class="img-wrapper"><img src="../images/regular-content-3-600x400.jpg" alt="Content Image"></div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
 
@@ -75,7 +75,7 @@
                         ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet,
                         consectetur adipisicing elit.</p>
 
-                    <div class="img-wrapper"><img src="images/regular-content-4-1000x650.jpg" alt="Content Image"></div>
+                    <div class="img-wrapper"><img src="../images/regular-content-4-1000x650.jpg" alt="Content Image"></div>
 
                     <h4 class="margin-top-btm">Quick Note About the Gifts</h4>
 
