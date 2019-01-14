@@ -6,8 +6,6 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
-    ports:
-      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wedding_work
@@ -17,7 +15,7 @@ services:
       - db
     build: .
     ports:
-      - "80:80"
+      - "8080:80"
     restart: always
     volumes:
       - .:/app
@@ -26,7 +24,5 @@ services:
       DB_USERNAME: root
       DB_PASSWORD: root
       DB_HOST: db
-      APP_ENV: local
-      APP_DEBUG: true
-volumes:
-  db_data: {}
+      APP_ENV: production
+      APP_DEBUG: false
