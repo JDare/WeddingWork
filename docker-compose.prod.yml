@@ -17,8 +17,6 @@ services:
     ports:
       - "8080:80"
     restart: always
-    volumes:
-      - .:/app
     environment:
       DB_DATABASE: wedding_work
       DB_USERNAME: root
