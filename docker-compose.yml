@@ -25,5 +25,6 @@ services:
       DB_DATABASE: wedding_work
       DB_USERNAME: root
       DB_PASSWORD: root
+      DB_HOST: db
 volumes:
   db_data: {}

@@ -7,6 +7,8 @@ RUN apt-get update && \
     apt-get install -y zip && \
     apt-get install -y unzip
 
+RUN docker-php-ext-install pdo pdo_mysql
+
 RUN a2enmod rewrite
 ENV APACHE_DOCUMENT_ROOT /app/public
 
