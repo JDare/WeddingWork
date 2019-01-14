@@ -15,7 +15,7 @@
                 <i class="small-icon icon icon-tie"></i>
                 <h5 class="date">{{ Carbon\Carbon::parse(config('wedding.date'))->format('jS F Y') }}</h5>
                 <h3 class="pre-title">Save The Date</h3>
-                <h1 class="title">Lilly <i class="icon icon-heart"></i> Jeremy</h1>
+                <h1 class="title">{{ config('wedding.bride.name') }} <i class="icon icon-heart"></i> {{ config('wedding.groom.name') }}</h1>
 
             </div><!-- slider-content-->
         </div><!--display-table-cell-->

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Lilly & Jeremy's Wedding 2019 @yield('title')</title>
+    <title>{{ config('wedding.bride.name') }} & {{ config('wedding.groom.name') }}'s Wedding {{ Carbon\Carbon::parse(config('wedding.date'))->format('Y') }} @yield('title')</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
 
     <div class="container">
 
-        <a class="logo" href="/"><img src="images/logo-white.png" alt="Lilly and Jeremy's Wedding"></a>
+        <a class="logo" href="/"><img src="images/logo-white.png" alt="{{ config('wedding.bride.name') }} and {{ config('wedding.groom.name') }}'s Wedding"></a>
 
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="icon icon-bars"></i></div>
 

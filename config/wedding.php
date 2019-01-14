@@ -12,7 +12,13 @@ return [
     */
 
     'date' => env('WEDDING_DATE', "2019-10-26 14:00:00"),
-//    'start_time' => env('WEDDING_DATE', "2019-10-26"),
+    'bride' => [
+        'name' => env('WEDDING_BRIDE_NAME', "Lilly"),
+    ],
+    'groom' => [
+        'name' => env('WEDDING_GROOM_NAME', "Jeremy"),
+    ],
+
 
 
 ];
