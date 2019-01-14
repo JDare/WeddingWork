@@ -25,4 +25,3 @@ services:
       DB_PASSWORD: root
       DB_HOST: db
       APP_ENV: production
-      APP_DEBUG: false

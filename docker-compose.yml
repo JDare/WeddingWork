@@ -27,6 +27,5 @@ services:
       DB_PASSWORD: root
       DB_HOST: db
       APP_ENV: local
-      APP_DEBUG: true
 volumes:
   db_data: {}
