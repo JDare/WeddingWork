@@ -283,7 +283,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 	z-index: -1; background: rgba(0,0,0,.3); }
 	
 .remaining-time .time-sec{ position: relative; display: inline-block; margin: 0 20px; margin-bottom: 30px; 
-	height: 120px; width: 120px; padding-top: 25px; border-radius: 100px; border: 1px solid #fff; }
+	height: 140px; width: 140px; padding-top: 37px; border-radius: 100px; border: 1px solid #fff; }
 
 .remaining-time .time-sec .title{ font-size: 3em; line-height: 1; display: block; }
 
