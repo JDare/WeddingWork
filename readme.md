@@ -1,5 +1,5 @@
-#Wedding Work - Laravel based wedding website framework
-##Installation
+# Wedding Work - Laravel based wedding website framework
+## Installation
 1. clone this repo
 2. `cp .env-example .env`
 3. `docker-compose build`
@@ -9,6 +9,6 @@
 5. `docker exec -it ww_app php /app/artisan key:generate`
 6. `docker exec -it ww_app php /app/artisan migrate`
 
-##Customizing
+## Customizing
 
 All templates are currently under `resources/` directory.
