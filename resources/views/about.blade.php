@@ -14,9 +14,9 @@
             <div class="slider-content">
 
                 <h1 class="title">Regular Page</h1>
-                <a href="01-homepage.html"><i class="icon icon-home"></i>Home</a>
-                <a href="01-homepage.html"><i class="icon icon-right-open-big"></i>Archive</a>
-                <a href="#"><i class="icon icon-right-open-big"></i>Regular Page</a>
+                {{--<a href="01-homepage.html"><i class="icon icon-home"></i>Home</a>--}}
+                {{--<a href="01-homepage.html"><i class="icon icon-right-open-big"></i>Archive</a>--}}
+                {{--<a href="#"><i class="icon icon-right-open-big"></i>Regular Page</a>--}}
 
             </div><!-- slider-content-->
         </div><!--display-table-cell-->
