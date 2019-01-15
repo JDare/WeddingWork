@@ -14,4 +14,5 @@ mix.copyDirectory('resources/sass/static/', 'public/css/static');
 mix.copyDirectory('resources/js/static/', 'public/js/static');
 mix.copyDirectory('resources/fonts/', 'public/fonts');
 mix.copyDirectory('resources/images/', 'public/images');
+mix.copyDirectory('resources/tabler/', 'public/tabler');
 

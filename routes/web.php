@@ -12,13 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('frontend.index');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('frontend.about');
 });
 
 Route::get('/rsvp', function () {
-    return view('rsvp');
+    return view('frontend.rsvp');
 });
+
+Auth::routes(['register' => false]);
+
+Route::get('/dashboard', 'DashboardController@index')->name('home');
