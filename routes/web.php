@@ -25,4 +25,8 @@ Route::get('/rsvp', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/dashboard', 'DashboardController@index')->name('home');
+Route::name('dashboard.')->prefix('dashboard')->namespace('Admin')->group(function(){
+    Route::get('/', 'DashboardController@index')->name('index');
+    Route::get('/guests', 'GuestController@index')->name('guests');
+
+});
