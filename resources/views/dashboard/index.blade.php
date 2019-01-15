@@ -88,7 +88,7 @@
             <div class="col-lg-12 col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Employment Growth</h3>
+                        <h3 class="card-title">RSVP Responses</h3>
                     </div>
                     <div class="card-body">
                         <div id="chart-employment" style="height: 16rem"></div>

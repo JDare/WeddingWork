@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        'prismjs': 'tabler/plugins/prismjs/js/prism.pack',
+        'prismjs': '/tabler/plugins/prismjs/js/prism.pack',
     },
 	shim: {
 		prism: {

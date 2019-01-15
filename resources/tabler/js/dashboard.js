@@ -9,16 +9,16 @@ shim: {
 'core': ['bootstrap', 'jquery'],
 },
 paths: {
-'core': 'tabler/js/core',
-'jquery': 'tabler/js/vendors/jquery-3.2.1.min',
-'bootstrap': 'tabler/js/vendors/bootstrap.bundle.min',
-'sparkline': 'tabler/js/vendors/jquery.sparkline.min',
-'selectize': 'tabler/js/vendors/selectize.min',
-'tablesorter': 'tabler/js/vendors/jquery.tablesorter.min',
-'vector-map': 'tabler/js/vendors/jquery-jvectormap-2.0.3.min',
-'vector-map-de': 'tabler/js/vendors/jquery-jvectormap-de-merc',
-'vector-map-world': 'tabler/js/vendors/jquery-jvectormap-world-mill',
-'circle-progress': 'tabler/js/vendors/circle-progress.min',
+'core': '/tabler/js/core',
+'jquery': '/tabler/js/vendors/jquery-3.2.1.min',
+'bootstrap': '/tabler/js/vendors/bootstrap.bundle.min',
+'sparkline': '/tabler/js/vendors/jquery.sparkline.min',
+'selectize': '/tabler/js/vendors/selectize.min',
+'tablesorter': '/tabler/js/vendors/jquery.tablesorter.min',
+'vector-map': '/tabler/js/vendors/jquery-jvectormap-2.0.3.min',
+'vector-map-de': '/tabler/js/vendors/jquery-jvectormap-de-merc',
+'vector-map-world': '/tabler/js/vendors/jquery-jvectormap-world-mill',
+'circle-progress': '/tabler/js/vendors/circle-progress.min',
 }
 });
 window.tabler = {
