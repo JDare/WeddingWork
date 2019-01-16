@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePartiesTable extends Migration
+class CreateGuestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreatePartiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('parties', function (Blueprint $table) {
+        Schema::create('guests', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->index();
+            $table->unsignedInteger('party_id');
             $table->string('name');
-            $table->string('email')->index()->nullable();
-            $table->string('telephone')->nullable();
-            $table->text('comment')->nullable();
-            $table->boolean('rsvp_sent')->default(false);
+            $table->boolean('vegetarian')->default(false);
+            $table->string('dietary_restrictions')->nullable();
             $table->timestamps();
+
+            $table->foreign('party_id')->references('id')->on('parties');
         });
     }
 
@@ -32,6 +32,6 @@ class CreatePartiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parties');
+        Schema::dropIfExists('guests');
     }
 }
