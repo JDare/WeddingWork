@@ -39,6 +39,10 @@
     <script src="/tabler/plugins/maps-google/plugin.js" defer></script>
     <!-- Input Mask Plugin -->
     <script src="/tabler/plugins/input-mask/plugin.js" defer></script>
+
+    @section('head')
+
+    @show
 </head>
 <body>
 <div class="page">
@@ -125,7 +129,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-                        Dashboard Theme by <a href="https://github.com/tabler/tabler" target="_blank">Tabler</a>.
+                        Powered By <a href="https://github.com/JDare/WeddingWork">Wedding Work</a> - Dashboard Theme by <a href="https://github.com/tabler/tabler" target="_blank">Tabler</a>.
                     </div>
                 </div>
             </div>

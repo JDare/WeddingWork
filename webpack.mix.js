@@ -16,3 +16,7 @@ mix.copyDirectory('resources/fonts/', 'public/fonts');
 mix.copyDirectory('resources/images/', 'public/images');
 mix.copyDirectory('resources/tabler/', 'public/tabler');
 
+mix.js('resources/js/dashboard/**/*.vue', 'public/js/dashboard/');
+mix.js('resources/js/dashboard/**/*.js', 'public/js/dashboard/');
+
+mix.disableNotifications()
