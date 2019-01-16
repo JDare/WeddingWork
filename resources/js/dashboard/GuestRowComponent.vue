@@ -8,11 +8,11 @@
         <td>
             <div>{{ guest.name }}</div>
             <div class="small text-muted">
-                Added on: Mar 19, 2018
+                Added on: {{ guest.created_at }}
             </div>
         </td>
         <td>
-            Dare Party
+            {{ guest.party.name }}
         </td>
         <td class="w-1 text-center">
             <i class="fe fe-x-circle"></i>
@@ -20,17 +20,10 @@
         <td class="w-1 text-center">
             <i class="fe fe-x-circle"></i>
         </td>
-        <td class="w-1 text-center">
-            <div class="item-action dropdown">
-                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                </div>
-            </div>
+        <td class="w-2">
+            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Send Invite</a>
+            <a href="javascript:void(0)" class="btn btn-secondary btn-sm"><i class="fe fe-edit-2"></i></a>
+            <a href="javascript:void(0)" class="btn btn-secondary btn-sm"><i class="fe fe-trash"></i></a>
         </td>
     </tr>
 </template>

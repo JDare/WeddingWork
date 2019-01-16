@@ -53,6 +53,7 @@
                     <a class="header-brand" href="{{ route('dashboard.index') }}">
                         <h1 style="margin:0;padding:0;font-family:'playball'">{{ config('app.name', 'Wedding Work') }}</h1>
                     </a>
+                    @if(Auth::user())
                     <div class="d-flex order-lg-2 ml-auto">
                         <div class="dropdown">
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
@@ -82,9 +83,11 @@
                     <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
                         <span class="header-toggler-icon"></span>
                     </a>
+                    @endif
                 </div>
             </div>
         </div>
+        @if(Auth::user())
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
             <div class="container">
                 <div class="row align-items-center">
@@ -109,6 +112,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <main class="my-3 my-md-5">
             @yield('content')
         </main>

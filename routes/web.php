@@ -25,8 +25,12 @@ Route::get('/rsvp', function () {
 
 Auth::routes(['register' => false]);
 
-Route::name('dashboard.')->prefix('dashboard')->namespace('Admin')->group(function(){
-    Route::get('/', 'DashboardController@index')->name('index');
-    Route::get('/guests', 'GuestController@index')->name('guests');
-
+Route::name('dashboard.')->namespace('Admin')->group(function(){
+    Route::group(['prefix'=>'dashboard', 'middleware' => ['auth']], function() {
+        Route::get('/', 'DashboardController@index')->name('index');
+        Route::get('/guests', 'GuestController@index')->name('guests');
+        Route::name('api.')->prefix('api')->namespace('Api')->group(function () {
+            Route::get('/guests', 'GuestController@index')->name('guests');
+        });
+    });
 });

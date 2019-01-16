@@ -6,16 +6,20 @@
                 <a href="#" class="btn btn-primary btn-sm" @click="addParty">Add Party</a>
             </div>
         </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+        <div class="table-responsive dimmer" v-bind:class="{ active: loading }">
+            <div class="loader"></div>
+            <div class="empty-list align-middle dimmer-content" v-if="guests.length === 0">
+                <h5>You have no guests</h5>
+            </div>
+            <table class="table table-hover table-outline table-vcenter text-nowrap card-table dimmer-content">
                 <thead>
                 <tr>
-                    <th class="text-center w-1"><i class="icon-people"></i></th>
+                    <th class="text-center w-1"><i class="fe fe-users"></i></th>
                     <th>Name</th>
                     <th>Party</th>
                     <th>Invite Sent</th>
                     <th>RSVP</th>
-                    <th class="text-center"><i class="icon-settings"></i></th>
+                    <th class="text-center"><i class="fe fe-settings"></i></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,30 +27,41 @@
                 </tbody>
             </table>
         </div>
-        <GuestForm ref="modal" />
+        <div class="card-footer">
+            <nav aria-label="Page navigation" class="float-right">
+                <ul class="pagination">
+                    <li class="page-item" v-bind:class="{ disabled: !pagination.prev_page_url }"><a class="page-link" href="#" @click="paginationPrev">Previous</a></li>
+                    <li class="page-item" v-for="n in pages" v-bind:class="{ active: pagination.current_page === n }"><a class="page-link" href="#" @click="paginationPage(n)">{{ n }}</a></li>
+                    <li class="page-item" v-bind:class="{ disabled: !pagination.next_page_url }"><a class="page-link" href="#" @click="paginationNext">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+        <GuestForm ref="modal" v-bind:party="selectedParty" />
     </div>
 </template>
 
 <script>
     import GuestRow from './GuestRowComponent'
     import GuestForm from './GuestFormComponent'
+    import axios from 'axios'
     export default {
         components: {
             GuestRow, GuestForm
         },
         data() {
             return {
-                'showForm': false,
-                'guests': [
-                    {
-                        "id": 1,
-                        "name": "test name"
-                    },
-                    {
-                        "id": 2,
-                        "name": "Frank"
-                    }
-                ]
+                loading: true,
+                showForm: false,
+                pagination: {
+                    total: 0,
+                    per_page: 15,
+                    next_page_url: null,
+                    prev_page_url: null,
+                    path: null,
+                },
+                guests: [],
+                selectedParty: {}
+
             }
         },
         methods: {
@@ -54,11 +69,58 @@
             {
                 let element = this.$refs.modal.$el
                 $(element).modal('show')
+            },
+            refreshGuests(page_url)
+            {
+                if (page_url === undefined)
+                    page_url = "/dashboard/api/guests?page=1";
+                this.loading = true;
+                let self = this;
+                axios.get(page_url)
+                    .then(function(response){
+                        console.log(response);
+                        if(response.status === 200)
+                        {
+                            self.guests = response.data.data;
+                            self.pagination = response.data;
+                        }
+                    }).finally(function(){
+                        self.loading = false;
+                    });
+            },
+            paginationNext: function()
+            {
+
+                this.refreshGuests(this.pagination.next_page_url);
+            },
+            paginationPrev: function()
+            {
+                this.refreshGuests(this.pagination.prev_page_url);
+            },
+            paginationPage: function(page)
+            {
+                this.refreshGuests(this.pagination.path + "?page=" + page);
             }
+
+        },
+        computed: {
+          pages: function(){
+              return Math.ceil(this.pagination.total / this.pagination.per_page);
+          }
+        },
+        mounted() {
+            this.refreshGuests();
         }
     }
 </script>
 
 <style scoped>
-
+    .pagination {
+        margin:0;
+        padding:0;
+    }
+    .empty-list {
+       text-align:center;
+        padding: 200px 0;
+    }
 </style>
