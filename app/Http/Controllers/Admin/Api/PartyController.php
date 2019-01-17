@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Party;
+use App\Party;
 use Illuminate\Http\Request;
 
 class PartyController extends Controller
@@ -13,16 +13,6 @@ class PartyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return response()->json(Guest::with('party')->paginate(15));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         //
     }
@@ -45,17 +35,6 @@ class PartyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Party $party)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Party  $party
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Party $party)
     {
         //
     }
