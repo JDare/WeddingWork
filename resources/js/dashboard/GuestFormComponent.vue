@@ -46,7 +46,12 @@
 <script>
     export default {
         props: {
-            party: Object,
+            partyId: Number,
+        },
+        methods: {
+            getParty: function(partyId){
+
+            }
         }
     }
 </script>

@@ -36,7 +36,7 @@
                 </ul>
             </nav>
         </div>
-        <GuestForm ref="modal" v-bind:party="selectedParty" />
+        <GuestForm ref="modal" party-id="selectedPartyId" />
     </div>
 </template>
 
@@ -60,7 +60,7 @@
                     path: null,
                 },
                 guests: [],
-                selectedParty: {}
+                selectedPartyId: {}
 
             }
         },
