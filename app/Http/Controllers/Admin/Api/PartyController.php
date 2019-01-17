@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Api;
 
-use App\Party;
+use App\Models\Guest;
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class PartyController extends Controller
@@ -25,7 +26,9 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $party = Party::create($request->all());
+        $party->save();
+        return $party;
     }
 
     /**
@@ -36,7 +39,7 @@ class PartyController extends Controller
      */
     public function show(Party $party)
     {
-        //
+        return $party->load('guests');
     }
 
     /**
@@ -48,7 +51,11 @@ class PartyController extends Controller
      */
     public function update(Request $request, Party $party)
     {
-        //
+        $guests = $request->get('guests');
+        $party->fill($request->all());
+        $party->save();
+        $this->sync_guests($party, $guests);
+        return $party;
     }
 
     /**
@@ -60,5 +67,40 @@ class PartyController extends Controller
     public function destroy(Party $party)
     {
         //
+    }
+
+    private function sync_guests(Party $party, Array $guests)
+    {
+        $old_guests = $party->guests;
+        $new_guests = [];
+        foreach ($guests as $guest)
+        {
+            if (empty($guest['id']) || $guest['id'] === null)
+            {
+                $new_guest = new Guest();
+            }else {
+                $new_guest = Guest::firstOrNew(['id' => $guest['id']]);
+            }
+            $new_guest->name = $guest['name'];
+            $new_guests[] = $new_guest;
+        }
+
+        foreach($old_guests as $old_guest)
+        {
+            $exists = false;
+            foreach($new_guests as $new_guest)
+            {
+                if ($old_guest['name'] === $new_guest['name'])
+                {
+                    $exists = true;
+                    break;
+                }
+            }
+            if (!$exists && $old_guest['id'])
+            {
+                Guest::destroy($old_guest['id']);
+            }
+        }
+        $party->guests()->saveMany($new_guests);
     }
 }

@@ -30,8 +30,10 @@ Route::name('dashboard.')->namespace('Admin')->group(function(){
         Route::get('/', 'DashboardController@index')->name('index');
         Route::get('/guests', 'GuestController@index')->name('guests');
         Route::name('api.')->prefix('api')->namespace('Api')->group(function () {
-            Route::get('/guests', 'GuestController@index');
-            Route::resource('party', 'PartyController');
+            Route::apiResources([
+                'guests' => 'GuestController',
+                'parties' => 'PartyController'
+            ]);
         });
     });
 });

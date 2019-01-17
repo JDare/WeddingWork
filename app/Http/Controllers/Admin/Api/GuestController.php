@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Api;
 
-use App\Guest;
+use App\Models\Guest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GuestController extends Controller
 {
@@ -14,7 +15,20 @@ class GuestController extends Controller
      */
     public function index()
     {
-        return response()->json(Guest::with('party')->paginate(15));
+//        DB::enableQueryLog();
+//
+//        Guest::leftJoin('parties', 'guests.party_id', '=', 'parties.id')
+//            ->select(['guests.*', 'parties.name'])
+//            ->orderBy('parties.name', 'ASC')
+//            ->paginate(15);
+//        dd(DB::getQueryLog());
+
+
+        return Guest::with('party')->leftJoin('parties', 'guests.party_id', '=', 'parties.id')
+            ->select(['guests.*', 'parties.name'])
+            ->orderBy('parties.name', 'ASC')
+            ->paginate(15);
+
     }
 
     /**

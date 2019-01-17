@@ -11,7 +11,7 @@
             <div class="empty-list align-middle dimmer-content" v-if="guests.length === 0">
                 <h5>You have no guests</h5>
             </div>
-            <table class="table table-hover table-outline table-vcenter text-nowrap card-table dimmer-content">
+            <table v-if="guests.length > 0" class="table table-hover table-outline table-vcenter text-nowrap card-table dimmer-content">
                 <thead>
                 <tr>
                     <th class="text-center w-1"><i class="fe fe-users"></i></th>
@@ -23,7 +23,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <GuestRow v-for="guest in guests" :key="guest.id" :guest="guest" />
+                    <GuestRow v-on:editParty="editParty" v-for="guest in guests" :key="guest.id" :guest="guest" />
                 </tbody>
             </table>
         </div>
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
         </div>
-        <GuestForm ref="modal" party-id="selectedPartyId" />
+        <GuestForm ref="modal" :party-id="selectedPartyId" />
     </div>
 </template>
 
@@ -60,13 +60,23 @@
                     path: null,
                 },
                 guests: [],
-                selectedPartyId: {}
-
+                selectedPartyId: null
             }
         },
         methods: {
-            addParty: function(event)
+            addParty: function(e)
             {
+                this.selectedPartyId = null;
+                this.showPartyForm();
+            },
+            editParty: function(e)
+            {
+                this.selectedPartyId = e;
+                this.showPartyForm();
+            },
+            showPartyForm: function()
+            {
+                this.$refs.modal.getParty(this.selectedPartyId);
                 let element = this.$refs.modal.$el
                 $(element).modal('show')
             },
@@ -77,20 +87,20 @@
                 this.loading = true;
                 let self = this;
                 axios.get(page_url)
-                    .then(function(response){
+                    .then((response) => {
                         console.log(response);
                         if(response.status === 200)
                         {
                             self.guests = response.data.data;
                             self.pagination = response.data;
+                            console.log(self.guests);
                         }
-                    }).finally(function(){
+                    }).finally(() => {
                         self.loading = false;
                     });
             },
             paginationNext: function()
             {
-
                 this.refreshGuests(this.pagination.next_page_url);
             },
             paginationPrev: function()

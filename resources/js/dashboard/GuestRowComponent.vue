@@ -21,9 +21,9 @@
             <i class="fe fe-x-circle"></i>
         </td>
         <td class="w-2">
-            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Send Invite</a>
-            <a href="javascript:void(0)" class="btn btn-secondary btn-sm"><i class="fe fe-edit-2"></i></a>
-            <a href="javascript:void(0)" class="btn btn-secondary btn-sm"><i class="fe fe-trash"></i></a>
+            <a href="#" class="btn btn-secondary btn-sm">Send Invite</a>
+            <a href="#" @click="editGuest" class="btn btn-secondary btn-sm"><i class="fe fe-edit-2"></i></a>
+            <a href="#" class="btn btn-secondary btn-sm"><i class="fe fe-trash"></i></a>
         </td>
     </tr>
 </template>
@@ -34,6 +34,7 @@
             guest: {
                 id: Number,
                 name: String,
+                party_id: Number
             }
         },
         computed: {
@@ -43,8 +44,13 @@
                 if (parts.length > 1)
                     return parts[0].charAt(0) + parts[1].charAt(0);
 
-                if (parts.length == 1)
+                if (parts.length === 1)
                     return parts[0].charAt(0) + parts[0].charAt(1);
+            }
+        },
+        methods: {
+            editGuest: function () {
+                this.$emit('editParty', this.guest.party_id)
             }
         }
     }
