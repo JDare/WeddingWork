@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Guest;
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +25,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $analytics = [
+            'parties'       => Party::count(),
+            'guests'        => Guest::count(),
+        ];
         return view('dashboard.index');
     }
 }

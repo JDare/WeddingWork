@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Api;
 
+use App\Http\Requests\StoreParty;
 use App\Models\Guest;
 use App\Models\Party;
 use Illuminate\Http\Request;
@@ -24,9 +25,11 @@ class PartyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreParty $request)
     {
-        $party = Party::create($request->all());
+        $party = Party::create($request->validated());
+        $guests = $request->get('guests');
+        $this->sync_guests($party, $guests);
         $party->save();
         return $party;
     }
@@ -49,10 +52,10 @@ class PartyController extends Controller
      * @param  \App\Party  $party
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Party $party)
+    public function update(StoreParty $request, Party $party)
     {
         $guests = $request->get('guests');
-        $party->fill($request->all());
+        $party->fill($request->validated());
         $party->save();
         $this->sync_guests($party, $guests);
         return $party;
@@ -66,7 +69,8 @@ class PartyController extends Controller
      */
     public function destroy(Party $party)
     {
-        //
+        $party->delete();
+        return response()->noContent();
     }
 
     private function sync_guests(Party $party, Array $guests)

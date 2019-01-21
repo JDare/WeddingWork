@@ -44,6 +44,9 @@
     import GuestRow from './GuestRowComponent'
     import GuestForm from './GuestFormComponent'
     import axios from 'axios'
+    import $ from 'jquery'
+    import bootstrap from 'bootstrap'
+
     export default {
         components: {
             GuestRow, GuestForm
@@ -88,12 +91,10 @@
                 let self = this;
                 axios.get(page_url)
                     .then((response) => {
-                        console.log(response);
                         if(response.status === 200)
                         {
                             self.guests = response.data.data;
                             self.pagination = response.data;
-                            console.log(self.guests);
                         }
                     }).finally(() => {
                         self.loading = false;
@@ -111,7 +112,6 @@
             {
                 this.refreshGuests(this.pagination.path + "?page=" + page);
             }
-
         },
         computed: {
           pages: function(){
@@ -120,6 +120,15 @@
         },
         mounted() {
             this.refreshGuests();
+            let element = this.$refs.modal.$el;
+            let self = this;
+            $(function(){
+                $(element).on('hidden.bs.modal', e => {
+                    // do something...
+                    self.refreshGuests();
+                })
+            });
+
         }
     }
 </script>

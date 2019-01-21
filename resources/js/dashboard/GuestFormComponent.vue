@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" tabindex="-1" role="dialog">
+    <div id="guest-form-modal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="card-header">
@@ -10,6 +10,13 @@
                     </div>
                 </div>
                 <div class="modal-body dimmer" v-bind:class="{ active: loading }">
+                    <div v-if="Object.keys(save_errors).length > 0" class="card-alert alert alert-danger mb-0">
+                        <ul>
+                            <li v-for="error in save_errors">
+                                {{ error[0] }}
+                            </li>
+                        </ul>
+                    </div>
                     <div class="loader"></div>
                     <div class="container  dimmer-content">
                         <div class="row">
@@ -42,6 +49,7 @@
                     </div>
                 </div>
                 <div class="modal-footer card-footer">
+                    <button type="button" class="btn btn-danger" id="delete-party" @click="deleteParty">Delete</button>
                     <button type="button" class="btn btn-primary" @click="saveParty">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
@@ -52,10 +60,14 @@
 
 <script>
     import axios from 'axios'
+    import $ from 'jquery'
+    import bootstrap from 'bootstrap'
+
     export default {
         data(){
             return {
                 loading: false,
+                save_errors: {},
                 party: {
                     id: null,
                     name: null,
@@ -71,34 +83,36 @@
                 if (partyId)
                 {
                     this.loading = true;
-                    let self = this;
                     axios.get('/dashboard/api/parties/' + partyId)
-                        .then((response) => {
-                            console.log(response);
+                        .then(response => {
                             if (response.status === 200)
                             {
-                                self.party = response.data;
+                                this.party = response.data;
                             }
-                        }).finally(() => {
-                            self.loading = false;
+                        }).finally(r => {
+                            this.loading = false;
                         });
                 }
             },
             saveParty: function(){
                 this.loading = true;
-                let self = this;
+                this.save_errors = {};
+
                 if (this.party.id)
                 {
                     axios.put('/dashboard/api/parties/' + this.party.id, this.party)
-                        .then((r) => {
+                        .then(r => {
                             if (r.status === 200)
                             {
                                 //close modal
-                                self.closeModal();
+                                this.closeModal();
                             }
-                        }).finally(() => {
-                            self.loading = false;
-                    })
+                        }).catch(error => {
+                            this.save_errors = error.response.data.errors;
+                        })
+                        .finally(r => {
+                            this.loading = false;
+                        })
                 }else{
                     axios.post('/dashboard/api/parties', this.party)
                         .then((r) => {
@@ -106,14 +120,38 @@
                             {
                                 //close modal
                                 self.closeModal();
+                                self.save_failure = false;
+                            }else{
+                                self.save_failure = true;
                             }
-                        }).finally(() => {
-                            self.loading = false;
-                    })
+                        }).catch(error => {
+                        this.save_errors = error.response.data.errors;
+                        })
+                        .finally(r => {
+                            this.loading = false;
+                        })
+
+                }
+            },
+            deleteParty: function()
+            {
+                if (window.confirm("Are you sure you want to delete this party?"))
+                {
+                    this.loading = true
+                    axios.delete('/dashboard/api/parties/' + this.party.id)
+                        .then(r => {
+                            this.closeModal();
+                        }).catch(error => {
+                            this.save_errors = error.response.data.errors;
+                        })
+                        .finally(r => {
+                            this.loading = false;
+                        })
                 }
             },
             resetParty: function()
             {
+                this.save_errors = {};
                 this.party = {
                     id: null,
                     name: null,
@@ -128,7 +166,7 @@
                 this.party.guests.splice(index, 1);
             },
             closeModal: function(){
-
+                $('#guest-form-modal').modal('hide');
             }
         },
         mounted() {
@@ -143,5 +181,8 @@
     }
     .btn-danger i {
         color: white;
+    }
+    #delete-party{
+        margin-right: auto;
     }
 </style>

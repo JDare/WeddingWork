@@ -21,7 +21,11 @@ class CreateGuestsTable extends Migration
             $table->string('dietary_restrictions')->nullable();
             $table->timestamps();
 
-            $table->foreign('party_id')->references('id')->on('parties');
+            $table->foreign('party_id')
+                ->references('id')
+                ->on('parties')
+                ->onDelete('cascade');;
+
         });
     }
 

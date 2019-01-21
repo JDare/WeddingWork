@@ -25,7 +25,7 @@ class GuestController extends Controller
 
 
         return Guest::with('party')->leftJoin('parties', 'guests.party_id', '=', 'parties.id')
-            ->select(['guests.*', 'parties.name'])
+            ->select(['guests.*'])
             ->orderBy('parties.name', 'ASC')
             ->paginate(15);
 
@@ -73,6 +73,13 @@ class GuestController extends Controller
      */
     public function destroy(Guest $guest)
     {
-        //
+        $party = $guest->party;
+        if ($party->guests->count() <= 1)
+        {
+            $party->delete();
+        }else{
+            $guest->delete();
+        }
+        return response()->noContent();
     }
 }
