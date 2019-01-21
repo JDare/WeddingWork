@@ -20,7 +20,7 @@
                     <div class="text-right text-green">
                         <i class="fe fe-users"></i>
                     </div>
-                    <div class="h1 m-0">95</div>
+                    <div class="h1 m-0">{{ $analytics['parties'] }}</div>
                     <div class="text-muted mb-4">Parties</div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <div class="text-right text-green">
                         <i class="fe fe-user"></i>
                     </div>
-                    <div class="h1 m-0">143</div>
+                    <div class="h1 m-0">{{ $analytics['guests'] }}</div>
                     <div class="text-muted mb-4">Guests</div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <div class="text-right text-red">
                         <i class="fe fe-mail"></i>
                     </div>
-                    <div class="h1 m-0">17</div>
+                    <div class="h1 m-0">{{ $analytics['without_email'] }}</div>
                     <div class="text-muted mb-4">Parties without Emails</div>
                 </div>
             </div>
