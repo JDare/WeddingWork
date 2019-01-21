@@ -5,9 +5,13 @@
 3. `docker-compose build`
 3. `docker-compose up -d`
     1. For production: `docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d`
-4. `docker exec -it ww_app composer install -d /app`
-5. `docker exec -it ww_app php /app/artisan key:generate`
-6. `docker exec -it ww_app php /app/artisan migrate`
+4. `docker exec -it ww_app composer install`
+5. `docker exec -it ww_app php artisan key:generate`
+6. `docker exec -it ww_app php artisan migrate`
+
+### Create Admin User
+
+Run `docker exec -it ww_app php artisan admin:user:create admin@email.com password` to create your default admin user.
 
 # Deployment
 

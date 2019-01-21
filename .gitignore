@@ -10,7 +10,8 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea
-public/css/*
-public/js/*
-public/images/*
-public/fonts/*
+public/css
+public/js
+public/images
+public/fonts
+public/tabler
