@@ -47,6 +47,7 @@
 <body>
 <div class="page">
     <div class="page-main">
+        @if(Auth::user())
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
@@ -87,7 +88,7 @@
                 </div>
             </div>
         </div>
-        @if(Auth::user())
+
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
             <div class="container">
                 <div class="row align-items-center">
@@ -116,7 +117,7 @@
         <main class="my-3 my-md-5">
             @yield('content')
         </main>
-
+        @if(Auth::user())
         <footer class="footer">
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
@@ -138,6 +139,7 @@
                 </div>
             </div>
         </footer>
+        @endif
     </div>
 </div>
 </body>

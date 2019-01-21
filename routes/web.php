@@ -24,6 +24,8 @@ Route::get('/rsvp', function () {
 });
 
 Auth::routes(['register' => false]);
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 
 Route::name('dashboard.')->namespace('Admin')->group(function(){
     Route::group(['prefix'=>'dashboard', 'middleware' => ['auth']], function() {
