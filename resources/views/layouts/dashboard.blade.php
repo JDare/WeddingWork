@@ -56,34 +56,12 @@
                     </a>
                     @if(Auth::user())
                     <div class="d-flex order-lg-2 ml-auto">
-                        <div class="dropdown">
-                            <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                                <span class="avatar avatar-placeholder"></span>
-                                <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">{{ Auth::user()->email }}</span>
-                      <small class="text-muted d-block mt-1">Administrator</small>
-                    </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-user"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-settings"></i> Settings
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="https://github.com/JDare/WeddingWork" target="_blank">
-                                    <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-                                </a>
-                                <a class="dropdown-item" href="{{route('logout')}}">
-                                    <i class="dropdown-icon fe fe-log-out"></i> Sign out
-                                </a>
-                            </div>
-                        </div>
+                        <span class="avatar avatar-placeholder"></span>
+                        <span class="ml-2 d-none d-lg-block">
+                            <span class="text-default">{{ Auth::user()->email }}</span>
+                            <small class="text-muted d-block mt-1">Administrator</small>
+                        </span>
                     </div>
-                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
-                        <span class="header-toggler-icon"></span>
-                    </a>
                     @endif
                 </div>
             </div>
@@ -92,6 +70,13 @@
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
             <div class="container">
                 <div class="row align-items-center">
+                    <div class="col-lg-3 ml-auto">
+                        <ul class="nav nav-tabs border-0 flex-column flex-lg-row justify-content-end">
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link"><i class="fe fe-log-out"></i> Logout</a>
+                        </li>
+                        </ul>
+                    </div>
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">

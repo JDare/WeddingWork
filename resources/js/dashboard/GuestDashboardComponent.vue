@@ -108,7 +108,9 @@
                 }
                 if (page_url === undefined)
                     page_url = "/dashboard/api/guests?page=" + curr_page;
+
                 this.loading = true;
+
                 if (this.search)
                 {
                     page_url = page_url + "&q=" + this.search
@@ -138,6 +140,7 @@
             },
             searchUser: function(e)
             {
+                this.resetPagination();
                 clearTimeout(this.search_debounce);
                 this.search_debounce = setTimeout(this.refreshGuests, 500);
                 if (e.keyCode === 13) {
@@ -147,8 +150,19 @@
             },
             clearSearch: function()
             {
+                this.resetPagination();
                 this.search = "";
                 this.refreshGuests();
+            },
+            resetPagination: function()
+            {
+                this.pagination = {
+                    total: 0,
+                        per_page: 15,
+                        next_page_url: null,
+                        prev_page_url: null,
+                        path: null,
+                };
             }
         },
         computed: {
