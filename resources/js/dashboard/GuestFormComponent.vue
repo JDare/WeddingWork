@@ -36,8 +36,12 @@
                             <div class="form-group col-6">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item" v-for="(guest, index) in party.guests">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="unknown" v-model="guest.unknown" checked="">
+                                            <span class="custom-control-label">Name Unknown (Plus One)</span>
+                                        </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="example-text-input" placeholder="e.g. John Smith" v-model="guest.name">
+                                            <input type="text" class="form-control" name="example-text-input" placeholder="e.g. John Smith" v-model="guest.name" :disabled="guest.unknown">
                                             <div class="input-group-append">
                                                 <a class="btn btn-group-sm btn-danger" @click="removeGuest(index)"><i class="fe fe-trash-2"></i></a>
                                             </div>
@@ -160,7 +164,7 @@
                 }
             },
             newGuest: function() {
-                this.party.guests.push({name: null});
+                this.party.guests.push({name: null, unknown: true});
             },
             removeGuest: function(index) {
                 this.party.guests.splice(index, 1);

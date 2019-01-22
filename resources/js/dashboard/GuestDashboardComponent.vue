@@ -100,8 +100,13 @@
             },
             refreshGuests(page_url)
             {
+                let curr_page = 1;
+                if (this.pagination && this.pagination.current_page)
+                {
+                    curr_page = this.pagination.current_page;
+                }
                 if (page_url === undefined)
-                    page_url = "/dashboard/api/guests?page=1";
+                    page_url = "/dashboard/api/guests?page=" + curr_page;
                 this.loading = true;
                 if (this.search)
                 {

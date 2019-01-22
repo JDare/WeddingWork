@@ -17,6 +17,7 @@ class CreateGuestsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('party_id');
             $table->string('name');
+            $table->boolean('unknown')->default(false);
             $table->boolean('vegetarian')->default(false);
             $table->string('dietary_restrictions')->nullable();
             $table->timestamps();

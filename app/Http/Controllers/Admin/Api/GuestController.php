@@ -21,7 +21,7 @@ class GuestController extends Controller
         $builder = Guest::with('party')
             ->leftJoin('parties', 'guests.party_id', '=', 'parties.id')
             ->select(['guests.*'])
-            ->orderBy('parties.name', 'ASC');
+            ->orderByRaw('parties.name ASC, guests.unknown ASC, guests.name ASC');
 
         if ($q)
         {

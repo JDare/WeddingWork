@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guest extends Model
 {
-    protected $fillable = ['name', 'vegetarian', 'dietary_restrictions', 'party_id'];
+    protected $fillable = ['name', 'unknown', 'vegetarian', 'dietary_restrictions', 'party_id'];
 
     public function party()
     {

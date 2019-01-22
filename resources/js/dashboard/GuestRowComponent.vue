@@ -1,12 +1,12 @@
 <template>
     <tr v-if="!deleted">
         <td class="text-center">
-            <div class="avatar d-block">
+            <div class="avatar d-block" v-bind:class="avatarColor">
                 {{ avatarInitials }}
             </div>
         </td>
         <td>
-            <div>{{ guest.name }}</div>
+            <div v-bind:class={unknown:guest.unknown}>{{ guestName }}</div>
             <div class="small text-muted">
                 Added on: {{ guest.created_at }}
             </div>
@@ -49,6 +49,10 @@
         },
         computed: {
             avatarInitials: function(){
+                if (this.guest.unknown)
+                {
+                    return "+1";
+                }
                 let parts = this.guest.name.toUpperCase().split(" ");
 
                 if (parts.length > 1)
@@ -56,7 +60,42 @@
 
                 if (parts.length === 1)
                     return parts[0].charAt(0) + parts[0].charAt(1);
-            }
+            },
+            guestName: function()
+            {
+                if (this.guest.unknown)
+                {
+                    return "Plus one";
+                }
+                return this.guest.name;
+            },
+            avatarColor: function(){
+                var s = String(this.guest.party_id);
+                var n = s.charAt(s.length-1);
+                switch(n)
+                {
+                    case "0":
+                        return "avatar-blue";
+                    case "1":
+                        return "avatar-indigo";
+                    case "2":
+                        return "avatar-purple";
+                    case "3":
+                        return "avatar-pink";
+                    case "4":
+                        return "avatar-red";
+                    case "5":
+                        return "avatar-orange";
+                    case "6":
+                        return "avatar-yellow";
+                    case "7":
+                        return "avatar-lime";
+                    case "8":
+                        return "avatar-teal";
+                    case "9":
+                        return "avatar-gray";
+                }
+            },
         },
         methods: {
             editGuest: function () {
@@ -93,5 +132,7 @@
 </script>
 
 <style scoped>
-
+    .unknown {
+        font-style:italic;
+    }
 </style>

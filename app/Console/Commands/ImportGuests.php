@@ -51,7 +51,12 @@ class ImportGuests extends Command
                 $parties++;
             }
             if (!empty($csvLine[1])) {
-                $guest = Guest::firstOrCreate(['name' => $csvLine[1], 'party_id' => $party->id]);
+                if ($csvLine[1] === "1")
+                {
+                    $guest = Guest::firstOrCreate(['name' => "", 'unknown' => true, 'party_id' => $party->id]);
+                }else{
+                    $guest = Guest::firstOrCreate(['name' => $csvLine[1], 'party_id' => $party->id]);
+                }
                 $party->guests()->save($guest);
                 $guests++;
             }
