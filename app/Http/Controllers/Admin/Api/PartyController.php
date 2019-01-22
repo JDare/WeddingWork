@@ -86,6 +86,7 @@ class PartyController extends Controller
                 $new_guest = Guest::firstOrNew(['id' => $guest['id']]);
             }
             $new_guest->name = $guest['name'];
+            $new_guest->unknown = $guest['unknown'];
             $new_guests[] = $new_guest;
         }
 
@@ -94,7 +95,12 @@ class PartyController extends Controller
             $exists = false;
             foreach($new_guests as $new_guest)
             {
-                if ($old_guest['name'] === $new_guest['name'])
+                if (!empty($old_guest['name']) && $old_guest['name'] === $new_guest['name'])
+                {
+                    $exists = true;
+                    break;
+                }
+                if ($old_guest['id'] === $new_guest['id'])
                 {
                     $exists = true;
                     break;
