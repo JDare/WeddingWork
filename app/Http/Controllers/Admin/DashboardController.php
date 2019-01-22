@@ -28,7 +28,10 @@ class DashboardController extends Controller
         $analytics = [
             'parties'       => Party::count(),
             'guests'        => Guest::count(),
-            'without_email' => Party::whereNotNull('email')->count(),
+            'without_email' => Party::whereNull('email')->count(),
+            'invites_sent'  => 0,
+            'rsvp_yes'      => 0,
+            'num_comments'  => 0,
         ];
         return view('dashboard.index', [
             'analytics' => $analytics,

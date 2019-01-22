@@ -53,7 +53,7 @@
                     <div class="text-right text-green">
                         <i class="fe fe-user-check"></i>
                     </div>
-                    <div class="h1 m-0">27</div>
+                    <div class="h1 m-0">{{ $analytics['invites_sent'] }}</div>
                     <div class="text-muted mb-4">Invites Sent</div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     <div class="text-right text-green">
                         <i class="fe fe-check"></i>
                     </div>
-                    <div class="h1 m-0">0</div>
+                    <div class="h1 m-0">{{ $analytics['rsvp_yes'] }}</div>
                     <div class="text-muted mb-4">RSVP Yes (total guests)</div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     <div class="text-right text-green">
                         <i class="fe fe-message-circle"></i>
                     </div>
-                    <div class="h1 m-0">621</div>
+                    <div class="h1 m-0">{{ $analytics['num_comments'] }}</div>
                     <div class="text-muted mb-4">Comments</div>
                 </div>
             </div>
