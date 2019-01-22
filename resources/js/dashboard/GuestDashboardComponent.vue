@@ -2,8 +2,21 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Guest List</h3>
-            <div class="card-options">
+            <div class="btn-group ml-5" role="group" aria-label="Basic example">
                 <a href="#" class="btn btn-primary btn-sm" @click="addParty">Add Party</a>
+            </div>
+            <div class="card-options">
+                <div class="">
+                    <div class="input-icon">
+                        <span class="input-icon-addon">
+                          <i class="fe fe-user"></i>
+                        </span>
+                        <input type="text" class="form-control" @keyup="searchUser" v-model="search" placeholder="Username">
+                        <span class="input-icon-addon search-clear" @click="clearSearch">
+                          <i class="fe fe-x-circle" v-if="search.length > 0"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="table-responsive dimmer" v-bind:class="{ active: loading }">
@@ -55,6 +68,8 @@
             return {
                 loading: true,
                 showForm: false,
+                search: "",
+                search_debounce: null,
                 pagination: {
                     total: 0,
                     per_page: 15,
@@ -88,16 +103,19 @@
                 if (page_url === undefined)
                     page_url = "/dashboard/api/guests?page=1";
                 this.loading = true;
-                let self = this;
+                if (this.search)
+                {
+                    page_url = page_url + "&q=" + this.search
+                }
                 axios.get(page_url)
-                    .then((response) => {
+                    .then(response => {
                         if(response.status === 200)
                         {
-                            self.guests = response.data.data;
-                            self.pagination = response.data;
+                            this.guests = response.data.data;
+                            this.pagination = response.data;
                         }
-                    }).finally(() => {
-                        self.loading = false;
+                    }).finally(r => {
+                        this.loading = false;
                     });
             },
             paginationNext: function()
@@ -111,6 +129,20 @@
             paginationPage: function(page)
             {
                 this.refreshGuests(this.pagination.path + "?page=" + page);
+            },
+            searchUser: function(e)
+            {
+                clearTimeout(this.search_debounce);
+                this.search_debounce = setTimeout(this.refreshGuests, 500);
+                if (e.keyCode === 13) {
+                    clearTimeout(this.search_debounce);
+                    this.refreshGuests()
+                }
+            },
+            clearSearch: function()
+            {
+                this.search = "";
+                this.refreshGuests();
             }
         },
         computed: {
@@ -141,5 +173,10 @@
     .empty-list {
        text-align:center;
         padding: 200px 0;
+    }
+    .search-clear{
+        pointer-events:all;
+        cursor:pointer;
+        z-index:2;
     }
 </style>

@@ -11,24 +11,28 @@ class GuestController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function index()
+    public function index(Request $request)
     {
-//        DB::enableQueryLog();
-//
-//        Guest::leftJoin('parties', 'guests.party_id', '=', 'parties.id')
-//            ->select(['guests.*', 'parties.name'])
-//            ->orderBy('parties.name', 'ASC')
-//            ->paginate(15);
-//        dd(DB::getQueryLog());
+        DB::enableQueryLog();
+        $q = trim($request->get('q'));
 
-
-        return Guest::with('party')->leftJoin('parties', 'guests.party_id', '=', 'parties.id')
+        $builder = Guest::with('party')
+            ->leftJoin('parties', 'guests.party_id', '=', 'parties.id')
             ->select(['guests.*'])
-            ->orderBy('parties.name', 'ASC')
-            ->paginate(15);
+            ->orderBy('parties.name', 'ASC');
 
+        if ($q)
+        {
+            $builder = $builder->where('guests.name', 'LIKE', '%'. $q . '%')
+            ->orWhere('parties.name', 'LIKE', '%'. $q . '%');
+        }
+        $results = $builder->paginate(15); //$builder->get();// $builder->paginate(15);
+
+        //dd(DB::getQueryLog());
+
+        return $results;
     }
 
     /**
