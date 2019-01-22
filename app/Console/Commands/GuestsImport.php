@@ -6,14 +6,14 @@ use App\Models\Guest;
 use App\Models\Party;
 use Illuminate\Console\Command;
 
-class ImportGuests extends Command
+class GuestsImport extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'import:guests {file}';
+    protected $signature = 'guests:import {file}';
 
     /**
      * The console command description.

@@ -37,3 +37,24 @@ Note: `resources/sass/static` and `resources/js/static` are from the original th
 
 Further tweaks can be made via the config `config/wedding.php` including dates, names etc.
 
+## Import / Export
+
+There are currently 2 very basic console commands for importing/export data from CSV.
+
+### Import
+
+Assuming your CSV files are in the following format:
+Note: `1` in the guest columns defines a "Plus one".
+```
+smith party, john smith
+           , jane smith
+           , jimmy smith
+uncle jim, jim bloggs
+         , 1
+```
+
+If running inside the docker container, you will need to cp the csv into the container:
+
+1. `docker cp bride.csv ww_app:/app/`
+2. `docker exec -it ww_app php artisan guests:import bride.csv`
+
