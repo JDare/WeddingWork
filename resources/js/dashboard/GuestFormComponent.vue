@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="modal-footer card-footer">
-                    <button type="button" class="btn btn-danger" id="delete-party" @click="deleteParty">Delete</button>
+                    <button type="button" class="btn btn-danger" id="delete-party" @click="deleteParty" v-if="party.id">Delete</button>
                     <button type="button" class="btn btn-primary" @click="saveParty">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
@@ -106,11 +106,8 @@
                 {
                     axios.put('/dashboard/api/parties/' + this.party.id, this.party)
                         .then(r => {
-                            if (r.status === 200)
-                            {
-                                //close modal
-                                this.closeModal();
-                            }
+                            //close modal
+                            this.closeModal();
                         }).catch(error => {
                             this.save_errors = error.response.data.errors;
                         })
@@ -120,16 +117,10 @@
                 }else{
                     axios.post('/dashboard/api/parties', this.party)
                         .then((r) => {
-                            if (r.status === 201)
-                            {
-                                //close modal
-                                self.closeModal();
-                                self.save_failure = false;
-                            }else{
-                                self.save_failure = true;
-                            }
+                            //close modal
+                            this.closeModal();
                         }).catch(error => {
-                        this.save_errors = error.response.data.errors;
+                            this.save_errors = error.response.data.errors;
                         })
                         .finally(r => {
                             this.loading = false;

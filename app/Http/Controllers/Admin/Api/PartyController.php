@@ -31,7 +31,7 @@ class PartyController extends Controller
         $guests = $request->get('guests');
         $this->sync_guests($party, $guests);
         $party->save();
-        return $party;
+        return $party->load('guests');
     }
 
     /**
@@ -58,7 +58,7 @@ class PartyController extends Controller
         $party->fill($request->validated());
         $party->save();
         $this->sync_guests($party, $guests);
-        return $party;
+        return $party->load('guests');
     }
 
     /**

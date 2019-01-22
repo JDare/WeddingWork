@@ -30,9 +30,10 @@
                     <th class="text-center w-1"><i class="fe fe-users"></i></th>
                     <th>Name</th>
                     <th>Party</th>
-                    <th>Invite Sent</th>
-                    <th>RSVP</th>
-                    <th class="text-center"><i class="fe fe-settings"></i></th>
+                    <th class="w-8">Email Address</th>
+                    <th class="w-8">Invite Sent</th>
+                    <th class="w-8">RSVP</th>
+                    <th class="text-center w-8"><i class="fe fe-settings"></i></th>
                 </tr>
                 </thead>
                 <tbody>

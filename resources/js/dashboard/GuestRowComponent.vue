@@ -12,15 +12,19 @@
             </div>
         </td>
         <td>
-            {{ guest.party.name }} &nbsp; <span class="tag tag-red" v-if="!validateEmail(guest.party.email)">No Email</span>
+            {{ guest.party.name }}
         </td>
-        <td class="w-1 text-center">
+        <td class="text-center" v-bind:class="{'text-green': validEmail}">
+            <i class="fe fe-x-circle" v-if="!validEmail"></i>
+            <i class="fe fe-check-circle" v-if="validEmail"></i>
+        </td>
+        <td class="text-center">
             <i class="fe fe-x-circle"></i>
         </td>
-        <td class="w-1 text-center">
+        <td class="text-center">
             <i class="fe fe-x-circle"></i>
         </td>
-        <td class="w-2">
+        <td class="">
             <!--<a href="#" class="btn btn-secondary btn-sm">Send Invite</a>-->
             <a href="#" @click="editGuest" class="btn btn-secondary btn-sm"><i class="fe fe-edit-2"></i></a>
             <a href="#" @click="deleteGuest"  v-bind:class="{ 'btn-loading': loading }" class="btn btn-secondary btn-sm"><i class="fe fe-trash"></i></a>
@@ -96,6 +100,10 @@
                         return "avatar-gray";
                 }
             },
+            validEmail: function()
+            {
+                return this.validateEmail(this.guest.party.email)
+            }
         },
         methods: {
             editGuest: function () {
