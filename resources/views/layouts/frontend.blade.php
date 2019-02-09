@@ -82,7 +82,7 @@
 
         <ul class="footer-links">
             <li><a href="/">HOME</a></li>
-            <li><a href="/about">THE WEDDING</a></li>
+            <li><a href="/save-the-date">SAVE THE DATE</a></li>
         </ul>
 
         <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
