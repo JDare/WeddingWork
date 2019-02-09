@@ -13,7 +13,7 @@
         <div class="display-table-cell">
             <div class="slider-content">
 
-                <h1 class="title">Regular Page</h1>
+                <h1 class="title">Save the Date</h1>
                 {{--<a href="01-homepage.html"><i class="icon icon-home"></i>Home</a>--}}
                 {{--<a href="01-homepage.html"><i class="icon icon-right-open-big"></i>Archive</a>--}}
                 {{--<a href="#"><i class="icon icon-right-open-big"></i>Regular Page</a>--}}
@@ -29,10 +29,7 @@
             <div class="col-sm-12">
 
                 <div class="content">
-
-                    <div class="img-wrapper"><img src="../images/regular-content-1-1000x650.jpg" alt="Content Image"></div>
-
-                    <h2 class="margin-top-btm">Planning Honeymoon Trip</h2>
+                    <h2 class="margin-top-btm">Saturday - 26th October 2019</h2>
                     <p class="margin-top-btm">Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud

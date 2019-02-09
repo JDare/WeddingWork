@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('frontend.index');
 });
 
-Route::get('/about', function () {
-    return view('frontend.about');
+Route::get('/save-the-date', function () {
+    return view('frontend.save-the-date');
 });
 
 Route::get('/rsvp', function () {

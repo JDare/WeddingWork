@@ -30,13 +30,11 @@
             <div class="col-sm-10">
 
                 <div class="heading">
-                    <h2 class="title">Our Story</h2>
+                    <h2 class="title" style="font-size: 3em;">To Have And To Hold Until We Grow Old</h2>
                     <span class="heading-bottom"><i class="icon icon-star"></i></span>
                 </div>
 
-                <p class="desc margin-bottom">Every bride and groom wants an incomparable wedding combined with fantasy
-                    and style. We create stunning, one-of-a-kind events produced and styled to perfection.
-                    From traditional to modern, elegant and relaxed, we focus on any event we plan.</p>
+                <p class="desc margin-bottom" style="font-size: 1.4em;">The countdown begins for when two become one. We can't wait to celebrate our special day with all our loved ones.</p>
 
             </div><!-- col-sm-10 -->
         </div><!-- row -->

@@ -46,7 +46,7 @@
                 </ul>
 
             </li>--}}
-            <li><a href="/about">THE WEDDING</a></li>
+            <li><a href="/save-the-date">SAVE THE DATE</a></li>
         </ul><!-- main-menu -->
 
     </div><!-- container -->
