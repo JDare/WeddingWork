@@ -26,6 +26,7 @@ class StoreParty extends FormRequest
         return [
             'name'      => 'required',
             'guests'    => 'required|array|min:1',
+            'email'     => 'nullable|email'
         ];
     }
 }
