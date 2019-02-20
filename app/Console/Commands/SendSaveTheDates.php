@@ -14,7 +14,7 @@ class SendSaveTheDates extends Command
      *
      * @var string
      */
-    protected $signature = 'send:savethedates {--prod}';
+    protected $signature = 'send:savethedates {--prod} {--force}';
 
     /**
      * The console command description.
@@ -40,19 +40,23 @@ class SendSaveTheDates extends Command
      */
     public function handle()
     {
-        $force = $this->option('prod');
-        if (!$force)
+        $isProd = $this->option('prod');
+        $force = $this->option('force');
+        if (!$isProd)
             $this->info('Begin Dry Run ...');
 
         $this->info("Starting Email Send");
         $parties = Party::all();
         foreach($parties as $party)
         {
-            if ($party->canSendEmail()) {
+            if ($party->std_sent && !$force)
+            {
+                $this->info('Skipping ' . $party->name . ', emails already sent.');
+            } elseif ($party->canSendEmail()) {
                 $this->info('Sending emails for ' . $party->name);
                 foreach($party->getEmailsForSending() as $email)
                 {
-                    if ($force)
+                    if ($isProd)
                     {
                         //send email
                         try {

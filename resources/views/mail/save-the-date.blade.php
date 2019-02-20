@@ -361,16 +361,18 @@
                 line-height:150% !important;
             }
 
-        }	@media only screen and (max-width: 480px){
-            #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
-                font-size:16px !important;
-                line-height:150% !important;
-            }
+        }
+        /*@media only screen and (max-width: 480px){*/
+            /*#templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{*/
+                /*font-size:16px !important;*/
+                /*line-height:150% !important;*/
+            /*}*/
 
-        }	@media only screen and (max-width: 480px){
+        /*}	*/
+        @media only screen and (max-width: 480px){
             #templateBody .mcnTextContent,#templateBody .mcnTextContent p{
                 font-size:16px !important;
-                line-height:150% !important;
+                line-height:250% !important;
             }
 
         }	@media only screen and (max-width: 480px){
