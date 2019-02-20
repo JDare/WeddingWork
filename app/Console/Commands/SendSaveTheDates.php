@@ -2,8 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\SaveTheDate;
 use App\Models\Party;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Mail;
 
 class SendSaveTheDates extends Command
 {
@@ -46,22 +48,29 @@ class SendSaveTheDates extends Command
         $parties = Party::all();
         foreach($parties as $party)
         {
-            if (filter_var($party->email, FILTER_VALIDATE_EMAIL)) {
-                $this->info('Sending email to: ' . $party->email);
-                if ($force)
+            if ($party->canSendEmail()) {
+                $this->info('Sending emails for ' . $party->name);
+                foreach($party->getEmailsForSending() as $email)
                 {
-                    //send email
-                    $email = trim($party->email);
-
-                    //flag as actually sent in db
-
-
-                }else{
-                    $this->info('[Dry Run] Email sent for ' . $party->email);
+                    if ($force)
+                    {
+                        //send email
+                        try {
+                            Mail::to($email)->send(new SaveTheDate());
+                            $this->info('Email sent for ' . $email);
+                            //flag as actually sent in db
+                            $party->std_sent = true;
+                        }catch (\Exception $e)
+                        {
+                            $this->error("Failed to send to " . $email);
+                        }
+                    }else{
+                        $this->info('[Dry Run] Email sent for ' . $email);
+                    }
                 }
-
+                $party->save();
             }else{
-                $this->warn("Party " . $party->name . " has no valid email, not sending to them.");
+                $this->warn("Party " . $party->name . " has no valid email, not sending.");
             }
 
         }
