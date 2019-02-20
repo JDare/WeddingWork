@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-6">
                                 <label class="form-label">Email Contact</label>
-                                <input type="email" class="form-control" name="example-text-input" placeholder="e.g. john.smith@gmail.com" v-model="party.email">
+                                <input type="email" class="form-control" name="example-text-input" placeholder="e.g. john.smith@gmail.com, jenny.smith@gmail.com..." v-model="party.email">
                             </div>
                         </div>
                         <div class="row">
