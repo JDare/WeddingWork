@@ -23,6 +23,15 @@ Route::get('/rsvp', function () {
     return view('frontend.rsvp');
 });
 
+Route::get('/mail', function(){
+    return view('mail.save-the-date',
+        [
+            "subject" => "Lilly and Jeremy - Save the Date",
+            "after_subject" => "test after",
+            "website_link" => "localhost/save-the-date"
+        ]);
+});
+
 Auth::routes(['register' => false]);
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
