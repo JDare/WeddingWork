@@ -15,6 +15,7 @@ class UpdateGuestsAddAttending extends Migration
     {
         Schema::table('guests', function (Blueprint $table) {
             $table->boolean('attending')->default(false)->after('name');
+            $table->dateTime('attending_updated_at')->nullable()->after('attending');
         });
     }
 
@@ -27,6 +28,7 @@ class UpdateGuestsAddAttending extends Migration
     {
         Schema::table('guests', function (Blueprint $table) {
             $table->dropColumn('attending');
+            $table->dropColumn('attending_updated_at');
         });
     }
 }

@@ -29,6 +29,8 @@ class DashboardController extends Controller
             'parties'       => Party::count(),
             'guests'        => Guest::count(),
             'without_email' => Party::whereNull('email')->count(),
+            'comments'      => Party::whereIsNotNull('comment')->limit(10)->orderBy('updated_at')->get(),
+            'rsvp_graph'    => Party::whereIsNotNull('comment')->limit(10)->orderBy('updated_at')->get(),
             'invites_sent'  => 0,
             'rsvp_yes'      => 0,
             'num_comments'  => 0,
