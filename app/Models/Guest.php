@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Guest extends Model
 {
@@ -13,6 +14,17 @@ class Guest extends Model
         'unknown'   => 'boolean',
         'vegetarian'   => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        Guest::saving(function(Guest $guest){
+           if ($guest->isDirty(['attending']))
+           {
+               $guest->attending_updated_at = Carbon::now();
+           }
+        });
+        parent::boot();
+    }
 
     public function party()
     {

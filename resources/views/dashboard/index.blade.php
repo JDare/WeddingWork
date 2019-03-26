@@ -91,39 +91,36 @@
                         <h3 class="card-title">RSVP Responses</h3>
                     </div>
                     <div class="card-body">
-                        <div id="chart-employment" style="height: 16rem"></div>
+                        <div id="chart-rsvp" style="height: 16rem"></div>
                     </div>
                 </div>
                 <script>
                     require(['c3', 'jquery'], function(c3, $) {
                         $(document).ready(function(){
                             var chart = c3.generate({
-                                bindto: '#chart-employment', // id of chart wrapper
+                                bindto: '#chart-rsvp', // id of chart wrapper
                                 data: {
                                     columns: [
                                         // each columns data
-                                        ['data1', 2, 8, 6, 7, 14, 11],
-                                        ['data2', 5, 15, 11, 15, 21, 25],
-                                        ['data3', 17, 18, 21, 20, 30, 29]
+                                        ['data1', {{ implode(',', $analytics['rsvp_graph']['yes']['counts']) }}],
+                                        // ['data2', 5, 15, 11, 15, 21, 25],
                                     ],
                                     type: 'line', // default type of chart
                                     colors: {
-                                        'data1': tabler.colors["orange"],
-                                        'data2': tabler.colors["blue"],
-                                        'data3': tabler.colors["green"]
+                                        'data1': tabler.colors["blue"],
+                                        // 'data2': tabler.colors["orange"],
                                     },
                                     names: {
                                         // name of each serie
-                                        'data1': 'Development',
-                                        'data2': 'Marketing',
-                                        'data3': 'Sales'
+                                        'data1': 'Attending',
+                                        'data2': 'Not-Attending'
                                     }
                                 },
                                 axis: {
                                     x: {
                                         type: 'category',
                                         // name of each category
-                                        categories: ['2013', '2014', '2015', '2016', '2017', '2018']
+                                        categories: @json($analytics['rsvp_graph']['yes']['date'])
                                     },
                                 },
                                 legend: {
@@ -147,62 +144,31 @@
                     <table class="table card-table table-striped table-vcenter">
                         <thead>
                         <tr>
-                            <th colspan="2">Guest</th>
+                            <th>Guest</th>
                             <th>Comment</th>
                             <th>Date</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @if($analytics['comments']->count() == 0)
                         <tr>
-                            <td class="w-1"><span class="avatar">RB</span></td>
-                            <td class="">Ronald Bradley</td>
-                            <td class="w-50">Initial commit</td>
-                            <td class="w-1 text-nowrap">May 6, 2018</td>
+                            <td colspan="3" align="center">
+                                No comments yet.
+                            </td>
                         </tr>
+                        @endif
+                        @foreach($analytics['comments'] as $party)
                         <tr>
-                            <td><span class="avatar">BM</span></td>
-                            <td>Russell Gibson</td>
-                            <td>Main structure</td>
-                            <td class="text-nowrap">April 22, 2018</td>
+                            <td class="">{{ $party->name }}</td>
+                            <td class="w-50">{{ $party->comment }}</td>
+                            <td class="w-1 text-nowrap">{{ $party->updated_at }}</td>
                         </tr>
-                        <tr>
-                            <td><span class="avatar">BA</span></td>
-                            <td>Beverly Armstrong</td>
-                            <td>Left sidebar adjustments</td>
-                            <td class="text-nowrap">April 15, 2018</td>
-                        </tr>
-                        <tr>
-                            <td><span class="avatar">BK</span></td>
-                            <td>Bobby Knight</td>
-                            <td>Topbar dropdown style</td>
-                            <td class="text-nowrap">April 8, 2018</td>
-                        </tr>
-                        <tr>
-                            <td><span class="avatar">SW</span></td>
-                            <td>Sharon Wells</td>
-                            <td>Fixes #625</td>
-                            <td class="text-nowrap">April 9, 2018</td>
-                        </tr>
-                        <tr>
-                            <td><span class="avatar">SW</span></td>
-                            <td>Sharon Wells</td>
-                            <td>Fixes #625</td>
-                            <td class="text-nowrap">April 9, 2018</td>
-                        </tr>
-                        <tr>
-                            <td><span class="avatar">SW</span></td>
-                            <td>Sharon Wells</td>
-                            <td>Fixes #625</td>
-                            <td class="text-nowrap">April 9, 2018</td>
-                        </tr>
-                        <tr>
-                            <td><span class="avatar">SW</span></td>
-                            <td>Sharon Wells</td>
-                            <td>Fixes #625</td>
-                            <td class="text-nowrap">April 9, 2018</td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 @endsection
