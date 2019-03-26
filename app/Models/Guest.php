@@ -9,6 +9,7 @@ class Guest extends Model
     protected $fillable = ['name', 'unknown', 'vegetarian', 'dietary_restrictions', 'party_id'];
 
     protected $casts = [
+        'attending'   => 'boolean',
         'unknown'   => 'boolean',
         'vegetarian'   => 'boolean',
     ];

@@ -33,18 +33,30 @@
                             <div class="col-6"><a href="#" class="btn btn-sm btn-primary" @click="newGuest">Add Guest</a></div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-6">
+                            <div class="form-group col-12">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" v-for="(guest, index) in party.guests">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="unknown" v-model="guest.unknown" checked="">
-                                            <span class="custom-control-label">Name Unknown (Plus One)</span>
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="example-text-input" placeholder="e.g. John Smith" v-model="guest.name" :disabled="guest.unknown">
-                                            <div class="input-group-append">
-                                                <a class="btn btn-group-sm btn-danger" @click="removeGuest(index)"><i class="fe fe-trash-2"></i></a>
+                                    <li class="list-group-item d-flex" v-for="(guest, index) in party.guests">
+                                        <div class="col-8">
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" v-model="guest.unknown">
+                                                <span class="custom-control-label">Name Unknown (Plus One)</span>
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="example-text-input" placeholder="e.g. John Smith" v-model="guest.name" :disabled="guest.unknown">
+                                                <div class="input-group-append">
+                                                    <a class="btn btn-group-sm btn-danger" @click="removeGuest(index)"><i class="fe fe-trash-2"></i></a>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="col-3 offset-1 align-self-end">
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" value="attending" v-model="guest.attending">
+                                                <span class="custom-control-label">Attending</span>
+                                            </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" value="vegetarian" v-model="guest.vegetarian">
+                                                <span class="custom-control-label">Vegetarian</span>
+                                            </label>
                                         </div>
                                     </li>
                                 </ul>
@@ -92,6 +104,7 @@
                             if (response.status === 200)
                             {
                                 this.party = response.data;
+                                console.log(this.party);
                             }
                         }).finally(r => {
                             this.loading = false;
@@ -101,6 +114,8 @@
             saveParty: function(){
                 this.loading = true;
                 this.save_errors = {};
+
+                console.log(this.party.guests);
 
                 if (this.party.id)
                 {

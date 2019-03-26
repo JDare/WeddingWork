@@ -87,6 +87,8 @@ class PartyController extends Controller
             }
             $new_guest->name = $guest['name'];
             $new_guest->unknown = $guest['unknown'];
+            $new_guest->vegetarian = $guest['vegetarian'];
+            $new_guest->attending = $guest['attending'];
             $new_guests[] = $new_guest;
         }
 
