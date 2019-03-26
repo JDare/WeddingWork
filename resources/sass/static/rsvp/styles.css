@@ -268,17 +268,26 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 
 .contact-form .pre-title{ margin: 10px 0; color: #E45F74; }
 
-.contact-form input,
-.contact-form select,
-.contact-form label{ display: block; width: 100%; }
+/*.contact-form input,*/
+/*.contact-form select,*/
+/*.contact-form label{ display: block; width: 100%; }*/
 
-.contact-form .margin-bottom{ margin-bottom: 20px; }
+/*.contact-form .margin-bottom{ margin-bottom: 20px; }*/
 
-.contact-form input,
-.contact-form select{ line-height: 45px; height: 45px; padding: 0 15px; }
+/*.contact-form input,*/
+/*.contact-form select{ line-height: 45px; height: 45px; padding: 0 15px; }*/
 
 .contact-form .btn{ padding: 0px 30px; line-height: 43px; height: 45px; margin-top: 10px; border-radius: 2px; }
 
+.contact-form .guest label{
+	display: inline-block;
+	min-width: 120px;
+}
+.contact-form .guest {
+	margin: 20px 0;
+	padding: 20px 0;
+	border-bottom: solid 1px #ccc;
+}
 
 /* GOOGLE MAP */
 

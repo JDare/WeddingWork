@@ -27,43 +27,30 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="contact-form margin-bottom">
-                    <h2 class="center-text">Are you attending?</h2>
-                    <h4 class="pre-title center-text">RSVP HERE!</h4>
+                    <h4 class="pre-title">Please select your attendance and dietary preferences</h4>
                     <form method="post">
-                        <div class="row">
-
-                            <div class="col-sm-12 margin-bottom">
-                                <label>Full Name</label>
-                                <input class="name-input" type="text" >
+                        @csrf
+                        @foreach($party->guests as $guest)
+                        <div class="row guest">
+                            <div class="col-sm-6">
+                                <h4>{{$guest->name}}</h4>
                             </div>
-                            <div class="col-sm-12 margin-bottom">
-                                <label>Email</label>
-                                <input class="email-input" type="text" >
+                            <div class="col-sm-6">
+                                <input type="hidden" name="guest[]" value="{{ $guest->id }}"/>
+                                <label for="attending-{{$guest->id}}">Attending?</label>
+                                <input type="checkbox" name="attending[]" id="attending-{{$guest->id}}" value="{{ $guest->attending }}"><br/>
+                                {{--<select name="attending[]">--}}
+                                    {{--<option>Attending</option>--}}
+                                    {{--<option>Not able to make it</option>--}}
+                                {{--</select>--}}
+                                <label for="veg-{{$guest->id}}">Vegetarian?</label>
+                                <input type="checkbox" name="vegetarian[]" id="veg-{{$guest->id}}" value="{{ $guest->attending }}">
                             </div>
-                            <div class="col-sm-6 margin-bottom">
-                                <label>Guest</label>
-                                <select class="event-select" name="option">
-                                    <option value="1"><span>00</span></option>
-                                    <option value="2">01</option>
-                                    <option value="3">02</option>
-                                    <option value="3">03</option>
-                                    <option value="3">04</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6 margin-bottom">
-                                <label>Event</label>
-                                <select class="event-select" name="option">
-                                    <option value="1">All Events</option>
-                                    <option value="3">Option 1</option>
-                                    <option value="3">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-12 center-text">
-                                <button class="btn"><b>I AM ATTENDING</b></button>
-                            </div>
-
-                        </div><!-- row -->
+                        </div>
+                        @endforeach
+                        <div class="col-sm-12 center-text">
+                            <button class="btn"><b>RSVP</b></button>
+                        </div>
                     </form>
                 </div><!-- contact-form -->
             </div><!-- col-sm-6 -->

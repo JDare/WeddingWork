@@ -35,6 +35,11 @@ class Party extends Model
         return $emails;
     }
 
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
     /**
      * Boot the Model.
      */

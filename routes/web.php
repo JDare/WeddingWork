@@ -19,8 +19,9 @@ Route::get('/save-the-date', function () {
     return view('frontend.save-the-date');
 });
 
-Route::get('/rsvp', function () {
-    return view('frontend.rsvp');
+Route::group(['prefix' => 'rsvp'], function(){
+   Route::get("/{party}", "RSVPController@view");
+   Route::post("/{party}", "RSVPController@update");
 });
 
 Route::get('/mail', function(){
