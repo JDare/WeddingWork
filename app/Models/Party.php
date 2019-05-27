@@ -35,6 +35,16 @@ class Party extends Model
         return $emails;
     }
 
+    public function isAttending()
+    {
+        foreach($this->guests as $guest)
+        {
+            if ($guest->attending)
+                return true;
+        }
+        return false;
+    }
+
     /**
      * Boot the Model.
      */
