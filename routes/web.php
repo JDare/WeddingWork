@@ -20,8 +20,8 @@ Route::get('/save-the-date', function () {
 });
 
 Route::group(['prefix' => 'rsvp'], function(){
-   Route::get("/{party}", "RSVPController@view");
-   Route::post("/{party}", "RSVPController@update");
+   Route::get("/{uuid}", "RSVPController@view");
+   Route::post("/{uuid}", "RSVPController@update");
 });
 
 Route::get('/mail', function(){

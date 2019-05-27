@@ -66,6 +66,7 @@
                 </div>
                 <div class="modal-footer card-footer">
                     <button type="button" class="btn btn-danger" id="delete-party" @click="deleteParty" v-if="party.id">Delete</button>
+                    <a :href="'/rsvp/' + party.uuid" class="btn btn-primary" target="_blank">Preview</a>
                     <button type="button" class="btn btn-primary" @click="saveParty">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>

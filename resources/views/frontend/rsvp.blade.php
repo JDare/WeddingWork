@@ -33,7 +33,12 @@
                         @foreach($party->guests as $guest)
                         <div class="row guest">
                             <div class="col-sm-6">
-                                <h4>{{$guest->name}}</h4>
+                                <h4>@if($guest->unknown)
+                                        <em>Your Guest</em>
+                                    @else
+                                    {{$guest->name}}
+                                    @endif
+                                </h4>
                             </div>
                             <div class="col-sm-6">
                                 <input type="hidden" name="guest[]" value="{{ $guest->id }}"/>
@@ -48,6 +53,8 @@
                             </div>
                         </div>
                         @endforeach
+                        <h4 class="pre-title">Comments and Song Requests</h4>
+                        <textarea name="comments" class="col-sm-12" rows="6"></textarea>
                         <div class="col-sm-12 center-text">
                             <button class="btn"><b>RSVP</b></button>
                         </div>
