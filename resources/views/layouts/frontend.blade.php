@@ -62,6 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             </li>--}}
             <li><a href="/save-the-date">SAVE THE DATE</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul><!-- main-menu -->
 
     </div><!-- container -->
@@ -98,6 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="footer-links">
             <li><a href="/">HOME</a></li>
             <li><a href="/save-the-date">SAVE THE DATE</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul>
 
         <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

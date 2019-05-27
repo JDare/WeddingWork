@@ -11,11 +11,17 @@
 |
 */
 
+use App\Models\Party;
+
 Route::get('/', function () {
     return view('frontend.index');
 });
 
 Route::get('/save-the-date', function () {
+    return view('frontend.save-the-date');
+});
+
+Route::get('/faq', function () {
     return view('frontend.save-the-date');
 });
 
@@ -30,6 +36,15 @@ Route::get('/mail', function(){
             "subject" => "Lilly and Jeremy - Save the Date",
             "after_subject" => "test after",
             "website_link" => "localhost/save-the-date"
+        ]);
+});
+
+Route::get('/mail-rsvp', function(){
+    return view('mail.rsvp',
+        [
+            "subject" => "Lilly and Jeremy - RSVP",
+            "after_subject" => "Lilly and Jeremy - RSVP",
+            "party" => Party::where('id', 4)->first(),
         ]);
 });
 
