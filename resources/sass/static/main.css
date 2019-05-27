@@ -71,6 +71,8 @@ img{ width: 100%; }
 
 li{ list-style: none; display: inline-block; }
 
+ul.normal-list li {display:block;}
+
 span{ display: inline-block; }
 
 button{ outline: 0; border: 0; background: none; cursor: pointer; }

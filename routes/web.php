@@ -22,7 +22,7 @@ Route::get('/save-the-date', function () {
 });
 
 Route::get('/faq', function () {
-    return view('frontend.save-the-date');
+    return view('frontend.faq');
 });
 
 Route::group(['prefix' => 'rsvp'], function(){

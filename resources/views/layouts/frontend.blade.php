@@ -46,6 +46,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <ul class="main-menu visible-on-click" id="main-menu">
             <li><a href="/">HOME</a></li>
+            <li><a href="/faq">FAQ</a></li>
+
             {{--<li class="drop-down"><a href="#!">OUR STORIES<i class="icon icon-caret-down"></i></a>
 
                 <ul class="drop-down-menu">
@@ -61,8 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
 
             </li>--}}
-            <li><a href="/save-the-date">SAVE THE DATE</a></li>
-            <li><a href="/faq">FAQ</a></li>
+            {{--<li><a href="/save-the-date">SAVE THE DATE</a></li>--}}
         </ul><!-- main-menu -->
 
     </div><!-- container -->
@@ -98,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <ul class="footer-links">
             <li><a href="/">HOME</a></li>
-            <li><a href="/save-the-date">SAVE THE DATE</a></li>
+            {{--<li><a href="/save-the-date">SAVE THE DATE</a></li>--}}
             <li><a href="/faq">FAQ</a></li>
         </ul>
 
