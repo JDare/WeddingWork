@@ -59,7 +59,9 @@
                     <div class="row">
                         <div class="col-sm-11 offset-1">
                             <h3 class=" margin-top-btm">Where are you registered?</h3>
-                            <p>You can find our registry <a href="https://registry.theknot.com/lillian-barrera-jeremy-dare-october-2019/29334325" target="_blank" style="text-decoration: underline;">here</a>. Your presence is the best give we could ever receive and the only one we need.</p>
+                            <p>We have a honeymoon and home renovation fund <a href="https://registry.theknot.com/lillian-barrera-jeremy-dare-october-2019/29334325" target="_blank" style="text-decoration: underline;">here</a>.
+                                We're also registered at <a href="https://www.target.com/gift-registry/giftgiver?registryId=5b88d00a9e5047bf81cc3a3ecc35da80&type=WEDDING" target="_blank" style="text-decoration: underline;">Target</a> and <a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/546923353" target="_blank" style="text-decoration: underline;">Bed Bath & Beyond</a>.
+                                Your presence is the best give we could ever receive and the only one we need.</p>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                     <div class="row">
