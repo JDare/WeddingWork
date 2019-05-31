@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Party;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -11,14 +12,17 @@ class RSVP extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+    private $party;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param Party $party
      */
-    public function __construct()
+    public function __construct(Party $party)
     {
-        //
+        $this->party = $party;
     }
 
     /**
@@ -28,12 +32,13 @@ class RSVP extends Mailable
      */
     public function build()
     {
-        $subject = "You're invited to Lillian and Jeremys Wedding";
+        $subject = "You're invited to Lilly and Jeremy's Wedding";
         return $this->subject($subject)
                     ->view('mail.rsvp', [
                         "subject" => $subject,
                         "after_subject" => "Lilly and Jeremy are getting married on the 26th October 2019",
+                        'party' => $this->party,
                         ])
-                    ->text('mail.rsvp_plain');
+                    ->text('mail.rsvp_plain', ['party' => $this->party,]);
     }
 }

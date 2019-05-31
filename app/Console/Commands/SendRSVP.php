@@ -61,13 +61,14 @@ class SendRSVP extends Command
                     {
                         //send email
                         try {
-                            Mail::to($email)->send(new RSVP());
+                            Mail::to($email)->send(new RSVP($party));
                             $this->info('Email sent for ' . $email);
                             //flag as actually sent in db
                             $party->rsvp_sent = true;
                         }catch (\Exception $e)
                         {
                             $this->error("Failed to send to " . $email);
+                            $this->error($e->getMessage());
                         }
                     }else{
                         $this->info('[Dry Run] Email sent for ' . $email);

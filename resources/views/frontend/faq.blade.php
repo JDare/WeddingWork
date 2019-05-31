@@ -80,7 +80,8 @@
                     <div class="row">
                         <div class="col-sm-11 offset-1">
                             <h3 class=" margin-top-btm">Is there any recommended accommodation?</h3>
-                            <p>We have a block of rooms at the <a style="text-decoration: underline" href="https://www.ayreshotels.com/ayres-suites-mission-viejo" target="_blank">Ayres Suites in Mission Viejo</a> which is approximately 10 minutes from the venue. Use code 'TBD' when booking to get our wedding room deals. Please note, transportation between the hotel and venue will not be provided.</p>
+                            <p>We have a block of rooms at the <a style="text-decoration: underline" href="https://www.ayreshotels.com/ayres-suites-mission-viejo" target="_blank">Ayres Suites in Mission Viejo</a> which is approximately 10 minutes from the venue. Please call (949)455-2545 EXT 0 and ask for the "Barrera and Dare wedding block" when making reservations.
+                                Please note, transportation between the hotel and venue will not be provided.</p>
                             <p style="margin-top:20px;">Alternatively, AirBnBs are affordable in the area around the venue.</p>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
