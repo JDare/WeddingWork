@@ -22,8 +22,9 @@
             <i class="fe fe-x-circle" v-if="!guest.party.rsvp_sent"></i>
             <i class="fe fe-check-circle" v-if="guest.party.rsvp_sent"></i>
         </td>
-        <td class="text-center">
-            <i class="fe fe-x-circle"></i>
+        <td class="text-center" v-bind:class="{'text-green': guest.attending}">
+            <i class="fe fe-x-circle" v-if="!guest.attending"></i>
+            <i class="fe fe-check-circle" v-if="guest.attending"></i>
         </td>
         <td class="">
             <!--<a href="#" class="btn btn-secondary btn-sm">Send Invite</a>-->
