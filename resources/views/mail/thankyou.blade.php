@@ -491,7 +491,7 @@
                         <td class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;" valign="top">
                         
                             <div style="text-align: center;"><span style="font-family:playfair display,georgia,times new roman,serif"><span style="font-size:Default Size">for sharing our special day with us, </span>being
- a part of our lives and supporting us through our journey. We were so 
+ a part of our lives, and supporting us through our journey. We were so 
 excited and grateful to celebrate our wedding day with you.<br>
 <br>
 You truly made our day unforgettable!<br>
