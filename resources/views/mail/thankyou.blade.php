@@ -399,32 +399,6 @@
                         <td align="center" valign="top" width="600" style="width:600px;">
                 <![endif]-->
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !important;">
-                    <tr>
-                        <td valign="top" id="templatePreheader" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                <tbody class="mcnTextBlockOuter">
-                                <tr>
-                                    <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                        <!--[if mso]>
-                                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                                            <tr>
-                                        <![endif]-->
-
-                                        <!--[if mso]>
-                                        <td valign="top" width="600" style="width:600px;">
-                                        <![endif]-->
-                                        <!--[if mso]>
-                                        </td>
-                                        <![endif]-->
-
-                                        <!--[if mso]>
-                                        </tr>
-                                        </table>
-                                        <![endif]-->
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table></td>
-                    </tr>
                    
                     <tr>
                                 <td id="templateHeader" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 0;" valign="top"><table class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -436,7 +410,7 @@
                             <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
                                 
                                     
-                                        <img alt="" src="MC%20SUBJECT_files/0f4fa05a-4504-480e-88f3-b7a0fd96cd04.jpg" style="max-width: 2048px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="600" align="middle">
+                                        <img alt="" src="https://www.lillyandjeremywedding.com/images/sparklers.jpg" style="max-width: 2048px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="600" align="middle">
                                     
                                 
                             </td>
@@ -601,7 +575,7 @@ Love always,</span></div>
                             <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
                                 
                                     
-                                        <img alt="" src="MC%20SUBJECT_files/6eb69c1c-12f8-4f45-93c2-20b6844bcabe.jpg" style="max-width: 2048px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="600" align="middle">
+                                        <img alt="" src="https://www.lillyandjeremywedding.com/images/rings.jpg" style="max-width: 2048px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="600" align="middle">
                                     
                                 
                             </td>
